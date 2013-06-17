@@ -3,6 +3,7 @@ node['dotfiles']['projects'].each do |folder, repohash|
 
     directory "#{node['etc']['passwd'][node['current_user']]['dir']}/Development/#{folder}" do
         owner node['current_user']
+        action :create
     end
 
     repohash.each do |repos|
